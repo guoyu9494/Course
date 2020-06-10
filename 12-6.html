@@ -33,7 +33,8 @@
             <td >计算结果:<output id="optresult" /></td>
         </tr>
     </table>
-        <script>function GetNumResult (oper) {
+        <script>
+        function GetNumResult (oper) {
                             var one = parseFloat(document.getElementById("first").value);
                             var two = parseFloat (document.getElementById("second").value);
                             var result = 0.00;
@@ -42,7 +43,20 @@
                                 switch(oper) {
                                     case "+":
                                         result = one + two;
-                                        break; 
+                                        break;
+                                    case"-":
+                                        result = one - two;
+                                        break;
+                                        case"*":
+                                        result = one * two;
+                                        break;
+                                        case"/": 
+                                        if(two==0){
+                                            throw "被除数不能为O";
+                                        }else{
+                                            result = one / two;
+                                        }
+                                        break;
                                     case "%":
                                         if(two == 0) {
                                             throw "被除数不能为O";
